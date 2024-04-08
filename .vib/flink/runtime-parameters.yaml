@@ -89,7 +89,7 @@ extraDeploy:
                 timeoutSeconds: 1
                 failureThreshold: 15
                 successThreshold: 1
-              securityContext: {{- include "common.compatibility.renderSecurityContext" (dict "secContext" .Values.taskmanager.containerSecurityContext "context" $) | nindent 12 }}
+              securityContext: {{- include "common.compatibility.renderSecurityContext" (dict "secContext" .Values.jobmanager.containerSecurityContext "context" $) | nindent 12 }}
               volumeMounts:
                 - name: flink-config-volume
                   mountPath: /opt/bitnami/flink/conf
